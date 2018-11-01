@@ -4,8 +4,32 @@
 <p>
     <%= @post.created_at %>
 </p>
-<p>
-    <h2>Replies</h2>
-    
-</p>
-<%= link_to 'Posts', controller: 'posts' %>
+<h2>Replies</h2>
+<% @post.replies.each do |reply| %>
+  <p>
+    <strong>Author:</strong>
+    <%= reply.commenter %>
+  </p>
+ 
+  <p>
+    <strong>Reply:</strong>
+    <%= reply.body %>
+  </p>
+<% end %>
+
+<h2>Add a comment:</h2>
+<%= form_for([@post, @post.replies.build]) do |f| %>
+  <p>
+    <%= f.label :commenter %><br>
+    <%= f.text_field :commenter %>
+  </p>
+  <p>
+    <%= f.label :body %><br>
+    <%= f.text_area :body %>
+  </p>
+  <p>
+    <%= f.submit %>
+  </p>
+<% end %>
+
+<%= link_to 'Posts', posts_path %>
