@@ -4,6 +4,9 @@
 <p>
     <%= @post.created_at %>
 </p>
+<p>
+    <%= @post.text %>
+</p>
 <h2>Replies</h2>
 <% @post.replies.each do |reply| %>
   <p>
