@@ -6,7 +6,8 @@
   </p>
   <p>
     <%= f.label :category %><br>
-    <%= f.select :category, [['General','general'],['Computer Science', 'computer_science']]%>
+    <%= f.collection_select :category, Post::CATEGORIES, :to_s, :to_s,
+        :include_blank => true%>
   </p>
   <p>
     <%= f.label :text %><br>
