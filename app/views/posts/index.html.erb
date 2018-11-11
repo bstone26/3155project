@@ -1,7 +1,10 @@
 <h1>Posts</h1>
 <%= link_to 'Home' , welcome_index_path %><br>
 <%= link_to 'New post' , new_post_path %>
- 
+<form>
+  <%= select("Post", "category", Post.all.collect(&:category)) %>
+  <input type="submit" value="Filter" />
+</form>
 <table>
   <tr>
     <th>Title</th>

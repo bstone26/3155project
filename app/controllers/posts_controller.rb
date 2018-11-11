@@ -1,6 +1,10 @@
 class PostsController < ApplicationController 
     def index
-        @posts = Post.all
+        if(params[:post] && Post.all.collect(&:category).include?(params[:post][:category]))
+            @posts = Post.send(params)
+        else
+            @posts = Post.all
+        end
     end
     def show
         @post = Post.find(params[:id])
