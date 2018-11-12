@@ -35,5 +35,14 @@ input[type=button], input[type=submit] {
     cursor: pointer;
     border-radius: 12px;
 }
-
+:link {
+    background-color: #4CAF50;
+    float: left;
+    border: none;
+    color: white;
+    padding: 16px 20px;
+    text-decoration: none;
+    cursor: pointer;
+    border-radius: 12px;
+}
 
