@@ -1,8 +1,9 @@
 class PostsController < ApplicationController 
     def index
-        if(params[:post] && Post.all.collect(&:category).include?(params[:post][:category]))
-            @posts = Post.send(params)
+        if(params.has_key?(:Post))
+            @posts = Post.where(category: params[:Post][:category])
         else
+            
             @posts = Post.all
         end
     end

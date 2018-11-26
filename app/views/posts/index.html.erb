@@ -2,9 +2,12 @@
 <%= link_to 'Home' , welcome_index_path %><br>
 
 <form>
-  <%= select("Post", "category", Post.all.collect(&:category)) %>
-  <input type="submit" value="Filter" />
+  <%= select("Post", "category", Post::CATEGORIES )%>
+  <input type ="submit" value="Filter">
 </form>
+
+<!--<p><%=params%></p>-->
+
 <table>
   <tr>
     <th>Title</th>

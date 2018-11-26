@@ -8,31 +8,9 @@
     <%= @post.text %>
 </p>
 <h2>Replies</h2>
-<% @post.replies.each do |reply| %>
-  <p>
-    <strong>Author:</strong>
-    <%= reply.commenter %>
-  </p>
- 
-  <p>
-    <strong>Reply:</strong>
-    <%= reply.body %>
-  </p>
-<% end %>
+<%= render @post.replies %>
 
 <h2>Add a comment:</h2>
-<%= form_for([@post, @post.replies.build]) do |f| %>
-  <p>
-    <%= f.label :commenter %><br>
-    <%= f.text_field :commenter %>
-  </p>
-  <p>
-    <%= f.label :body %><br>
-    <%= f.text_area :body %>
-  </p>
-  <p>
-    <%= f.submit %>
-  </p>
-<% end %>
+<%= render 'replies/form' %>
 
 <%= link_to 'Posts', posts_path %>
