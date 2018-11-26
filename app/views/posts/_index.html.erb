@@ -1,0 +1,22 @@
+<table>
+  <tr>
+    <th>Title</th>
+    <th>Created</th>
+    <th>Category</th>
+  </tr>
+ 
+  <% @posts.each do |post| %>
+    <tr>
+      <td><%= post.title %></td>
+      <td><%= post.created_at %></td>
+      <td><%=
+          if post.category.to_s.empty?
+            "None"
+          else
+            post.category
+          end
+          %></td>
+      <td><%= link_to 'Show', post_path(post) %></td>
+    </tr>
+  <% end %>
+</table>
