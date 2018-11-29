@@ -6,12 +6,13 @@
   <input type ="submit" value="Filter">
 </form>
 
-<p><%=params%></p>
+
 
 <table>
   <tr>
     <th>Title</th>
     <th>Created</th>
+    <th>Author</th>
     <th>Category</th>
   </tr>
  
@@ -19,6 +20,7 @@
     <tr>
       <td><%= post.title %></td>
       <td><%= post.created_at %></td>
+      <td><%= post.author %></td>
       <td><%=
           if post.category.to_s.empty?
             "None"
@@ -28,10 +30,12 @@
           %></td>
       <td><%= link_to 'Show', post_path(post) %></td>
       <td><%= link_to 'Edit', edit_post_path(post) %></td>
-      <td><%= link_to 'Destroy',
-                            post_path(post),
-                            method: :delete,
-                            data: { confirm: 'Are you sure?' } %></td>
+      <% if current_user.uid.eql?post.author_id%>
+        <td><%= link_to 'Destroy',
+                              post_path(post),
+                              method: :delete,
+                              data: { confirm: 'Are you sure?' } %></td>
+      <% end %>
     </tr>
   <% end %>
 </table>

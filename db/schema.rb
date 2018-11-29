@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_11_29_153211) do
+ActiveRecord::Schema.define(version: 2018_11_29_183933) do
 
   create_table "posts", force: :cascade do |t|
     t.string "title"
@@ -18,6 +18,8 @@ ActiveRecord::Schema.define(version: 2018_11_29_153211) do
     t.string "category"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.string "author"
+    t.string "author_id"
   end
 
   create_table "replies", force: :cascade do |t|
