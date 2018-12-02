@@ -1,9 +1,16 @@
-<p>
-    <strong>Author:</strong>
+<div id="reply">
+  
+  <div id="replyCred">
     <%= reply.commenter %>
-  </p>
+    at <%=reply.created_at%>
+  </div>
  
-  <p>
-    <strong>Reply:</strong>
+  <div id="replyContent">
     <%= reply.body %>
-  </p>
+  </div>
+  <div>
+    <%= link_to 'Delete Reply', [reply.post, reply],
+                method: :delete,
+                data: {confirm: 'Are you sure' } %>
+  </div>
+</div>

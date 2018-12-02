@@ -1,3 +1,40 @@
 // Place all the styles related to the Replies controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+#createReplyBox{
+    width:80%;
+    margin: auto;
+}
+#createReplyBox textarea{
+    width: 99%;
+    height: 100px;
+    border: 2px solid #ccc;
+    background-color: #f8f8f8;
+    resize: none;
+    margin:auto;
+}
+#createReplyButton{
+    //border: solid black 1px;
+    width: 80%;
+    margin:auto;
+    text-align:right;
+}
+#reply{
+    border:solid black 1px;
+    width:80%;
+    margin: auto;
+
+}
+#replyHeader{
+    width:80%;
+    margin: auto;
+    text-align:left;
+    border:solid black 1px;
+}
+#replyCred{
+    text-align:left;
+}
+#replyContent{
+    text-align:left;
+    padding:10px;
+}

@@ -1,13 +1,12 @@
 <%= form_for([@post, @post.replies.build]) do |f| %>
-  <p>
-    <%= f.label :commenter %><br>
-    <%= f.text_field :commenter %>
-  </p>
-  <p>
-    <%= f.label :body %><br>
+  <!--<p>-->
+  <!--  <%= f.label :commenter %><br>-->
+  <!--  <%= f.text_field :commenter %>-->
+  <!--</p>-->
+  <div id="createReplyBox">
     <%= f.text_area :body %>
-  </p>
-  <p>
+  </div>
+  <div id ="createReplyButton">
     <%= f.submit %>
-  </p>
+  </div>
 <% end %>

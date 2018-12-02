@@ -19,13 +19,16 @@
         </p>
     </div>
 </div>
-<h2>Replies</h2>
-<%= render @post.replies %>
 <% if current_user %>
-    <h2>Add a comment:</h2>
+    
     <%= render 'replies/form' %>
 <%else%>
     <p>You must be signed in to reply</p>
 <% end %>
+<div id="replyHeader">
+    <h3>Replies</h3>
+</div>
+<%= render @post.replies %>
+
 
 <%= link_to 'Posts', posts_path %>
