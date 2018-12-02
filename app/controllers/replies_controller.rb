@@ -3,6 +3,7 @@ class RepliesController < ApplicationController
         @post = Post.find(params[:post_id])
         @reply = @post.replies.new(reply_params)
         @reply.commenter = current_user.name
+        @reply.commenter_id = current_user.uid
         @reply.save
         redirect_to post_path(@post)
     end

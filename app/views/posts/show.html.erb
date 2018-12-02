@@ -19,15 +19,17 @@
         </p>
     </div>
 </div>
+
 <% if current_user %>
-    
     <%= render 'replies/form' %>
 <%else%>
     <p>You must be signed in to reply</p>
 <% end %>
+
 <div id="replyHeader">
     <h3>Replies</h3>
 </div>
+
 <%= render @post.replies %>
 
 
