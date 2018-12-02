@@ -3,12 +3,21 @@
    params[:Post][:category]
  end
   %> Posts</h1>
-<%= link_to 'Home' , welcome_index_path %><br>
-
-<form>
-  <%= select("Post", "category", Post::CATEGORIES )%>
-  <input type ="submit" value="Filter">
-</form>
+<div>
+  <table id="nav">
+    <tr>
+      <td><div><%= link_to 'Home' , welcome_index_path %></div></td>
+      
+      <td>
+        <form>
+          <%= select("Post", "category", Post::CATEGORIES )%>
+          <input type ="submit" value="Filter">
+        </form>
+      </td>
+      <td><div><%= link_to 'New post' , new_post_path %></div></td>
+    </tr>
+  </table>
+</div>
 
 
 <div class=index1>
@@ -55,4 +64,3 @@
   <% end %>
 </table>
 </div>
-<%= link_to 'New post' , new_post_path %>

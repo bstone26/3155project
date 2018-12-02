@@ -21,8 +21,11 @@
 </div>
 <h2>Replies</h2>
 <%= render @post.replies %>
-
-<h2>Add a comment:</h2>
-<%= render 'replies/form' %>
+<% if current_user %>
+    <h2>Add a comment:</h2>
+    <%= render 'replies/form' %>
+<%else%>
+    <p>You must be signed in to reply</p>
+<% end %>
 
 <%= link_to 'Posts', posts_path %>

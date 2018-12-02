@@ -7,6 +7,6 @@ class RepliesController < ApplicationController
     
     private
         def reply_params
-            params.require(:reply).permit(:commenter, :body)
+            params.require(:reply).permit(current_user.name, :body)
         end
 end
