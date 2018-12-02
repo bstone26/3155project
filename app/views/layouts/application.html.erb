@@ -10,19 +10,22 @@
   </head>
 
   <body>
-    <div>
+    
+    <div id="header">
+      <img src ="https://advancement.uncc.edu/sites/advancement.uncc.edu/files/media/crown.gif" alt="unccCrownLogo"id="headerImg">
+      <h1 id="headerTxt">Ask A Niner</h1>
+      <div id="signIn">
       <% if current_user %>
         Signed in as <strong><%= current_user.name %></strong>!
         <%= link_to "Sign out", signout_path, id: "sign_out" %>
       <% else %>
         <%= link_to "Sign in with Google", "/auth/google_oauth2", id: "sign_in" %>
       <% end %>
-      <%= params %>
-      <% if current_user %>
-        <%=current_user.uid%>
-        <%=current_user.created_at%>
-      <%end%>
-      
+      <!--<%= params %>-->
+      <!--<% if current_user %>-->
+      <!--<%end%>-->
+
+    </div>
     </div>
     <%= yield %>
   </body>

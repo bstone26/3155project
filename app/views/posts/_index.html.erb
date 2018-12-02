@@ -1,22 +1,43 @@
-<table>
+    <div class=index1>
+<table class=postTable>
   <tr>
     <th>Title</th>
-    <th>Created</th>
+    <th>Author</th>
     <th>Category</th>
+    <th>Created</th>
+    <th></th>
   </tr>
  
   <% @posts.each do |post| %>
-    <tr>
-      <td><%= post.title %></td>
-      <td><%= post.created_at %></td>
-      <td><%=
-          if post.category.to_s.empty?
-            "None"
-          else
-            post.category
-          end
-          %></td>
-      <td><%= link_to 'Show', post_path(post) %></td>
-    </tr>
+    
+        <tr>
+          <td><%= link_to post.title, post_path(post) %></td>
+          
+          <td><%= post.author %></td>
+          <td><%=
+              if post.category.to_s.empty?
+                "None"
+              else
+                post.category
+              end
+              %></td>
+              <td><%= post.created_at %></td>
+          <!--<td><%= link_to 'Show', post_path(post) %></td>-->
+          <!--<td><%= link_to 'Edit', edit_post_path(post) %></td>-->
+          <% if current_user %>
+            <% if current_user.uid.eql?post.author_id%>
+              <td><%= link_to 'Delete',
+                                    post_path(post),
+                                    method: :delete,
+                                    data: { confirm: 'Are you sure?' } %></td>
+            <% else%>
+              <td></td>
+            <% end %>
+            
+          <% else%>
+              <td></td>
+          <% end %>
+          
+        </tr>
   <% end %>
 </table>

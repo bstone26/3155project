@@ -17,3 +17,19 @@ body{
     background-color: white;
     text-align: center;
 }
+#header{
+    text-align: left;
+    border-bottom:solid black 1px;
+    /*white-space: nowrap;*/
+    height:40px;
+}
+#headerTxt{
+    display: inline
+}
+#headerImg{
+    height:60%;
+
+}
+#signIn{
+    float:right;
+}

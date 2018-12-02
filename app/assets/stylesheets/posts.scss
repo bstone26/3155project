@@ -1,48 +1,80 @@
 // Place all the styles related to the Posts controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
-table{
-    width: 100%;
-    text-align: left;
-}
+// table{
+//     width: 90%;
+//     text-align: left;
+//     tr:nth-child(even) {background-color: #cff9dd;}
+//     border-radius: 12px;
+// }
 
-#title {
-    font-size: 36px;
-}
-input[type=text] {
-    width: 50%;
-    padding: 12px 12px;
-    border: 2px solid #ccc;
-    background-color: #f8f8f8;
-}
+// #title {
+//     font-size: 36px;
+// }
+// input[type=text] {
+//     width: 50%;
+//     padding: 12px 12px;
+//     border: 2px solid #ccc;
+//     background-color: #f8f8f8;
+// }
 
-textarea {
-    width: 50%;
-    height: 300%;
-    padding: 12px 12px;
-    border: 2px solid #ccc;
-    background-color: #f8f8f8;
-    resize: none;
-}
+// textarea {
+//     width: 50%;
+//     height: 300%;
+//     padding: 12px 12px;
+//     border: 2px solid #ccc;
+//     background-color: #f8f8f8;
+//     resize: none;
+// }
 
-input[type=button], input[type=submit] {
-    background-color: #4CAF50;
-    float: right;
-    border: none;
-    color: white;
-    padding: 16px 20px;
-    text-decoration: none;
-    cursor: pointer;
-    border-radius: 12px;
+// input[type=button], input[type=submit] {
+//     background-color: #4CAF50;
+//     float: right;
+//     border: none;
+//     color: white;
+//     padding: 16px 20px;
+//     text-decoration: none;
+//     cursor: pointer;
+//     border-radius: 12px;
+// }
+// :link {
+//      background-color: #4CAF50;
+//     float: left;
+//     border: none;
+//     color: white;
+//     padding: 16px 20px;
+//     text-decoration: none;
+//     cursor: pointer;
+//     border-radius: 12px;
+// }
+.index1{
+    border: 1px solid black;
+    width: 80%;
+    overflow-x:auto;
+    margin:auto;
+    padding:10px;
 }
-:link {
-    background-color: #4CAF50;
-    float: left;
-    border: none;
-    color: white;
-    padding: 16px 20px;
-    text-decoration: none;
-    cursor: pointer;
-    border-radius: 12px;
+.postTable{
+    width:100%;
+    text-align:left;
+}
+#post{
+    border:solid black 1px;
+    text-align:left;
+    width:80%;
+    margin:auto;
+}
+#postTitle{
+    border:solid black 1px;
+    background-color:#47995c;
+}
+#postCred{
+    
+    padding:5px;
+
+}
+#postContent{
+    text-align:left;
+    padding:10px;
 }
 

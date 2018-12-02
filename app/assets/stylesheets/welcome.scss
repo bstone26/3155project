@@ -1,3 +1,18 @@
 // Place all the styles related to the Welcome controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+.index2{
+    border: 1px solid black;
+    width:80%;
+    height:100px;
+    float: center;
+    overflow-x:auto;
+    margin:auto;
+}
+
+th{
+    background-color:#47995c;
+}
+tr:hover {background-color:#cff9dd;}
+// tr:hover:nth-child(even) {background-color: #cff9dd;}
+tr:nth-child(even) {background-color: #f2f2f2;}
