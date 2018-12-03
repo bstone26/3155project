@@ -1,4 +1,7 @@
 class Post < ApplicationRecord
-    has_many :replies, dependent: :delete_all
-    CATEGORIES = ['General', 'Computer Science','Math']
+    has_many :replies, dependent: :destroy
+    validates :title, presence: true, length: { minimum: 5}
+    validates :text, presence: true, length: { minimum: 10 }
+    validates :category, presence: true
+    CATEGORIES = ['General','Architecture','Art','Biology','Chemistry','Computer Science','Math']
 end

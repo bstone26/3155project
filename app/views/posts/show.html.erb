@@ -1,19 +1,36 @@
-<p>
-    <%= @post.title %>
-</p>
-<p>
-    <%= @post.author %>
-</p>
-<p>
-    <%= @post.created_at %>
-</p>
-<p>
-    <%= @post.text %>
-</p>
-<h2>Replies</h2>
+<div id="post">    
+    <div id="postTitle">
+        <h3>
+            <%= @post.title %>
+        </h3>
+    </div>
+    <div id="postCred">
+       
+            Posted by <%= @post.author %>
+       
+        
+            at <%= @post.created_at %>
+        
+    </div>
+
+    <div id="postContent">
+        <p>
+            <%= @post.text %>
+        </p>
+    </div>
+</div>
+
+<% if current_user %>
+    <%= render 'replies/form' %>
+<%else%>
+    <p>You must be signed in to reply</p>
+<% end %>
+
+<div id="replyHeader">
+    <h3>Replies</h3>
+</div>
+
 <%= render @post.replies %>
 
-<h2>Add a comment:</h2>
-<%= render 'replies/form' %>
 
 <%= link_to 'Posts', posts_path %>

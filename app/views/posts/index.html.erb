@@ -1,44 +1,70 @@
-<h1>Posts</h1>
-<%= link_to 'Home' , welcome_index_path %><br>
+ <h1>All <%=
+ if params.has_key?(:Post)
+   params[:Post][:category]
+ end
+  %> Posts</h1>
+<div>
+  <table id="nav">
+    <tr>
+      <td><div><%= link_to 'Home' , welcome_index_path %></div></td>
+      
+      <td>
+        <form>
+          <%= select("Post", "category", Post::CATEGORIES )%>
+          <input type ="submit" value="Filter">
+        </form>
+      </td>
+      <% if current_user %>
+        <td><div><%= link_to 'New post' , new_post_path %></div></td>
+      <% else %>
+        <td>Sign in to post</td>
+      <% end %>
+    </tr>
+  </table>
+</div>
 
-<form>
-  <%= select("Post", "category", Post::CATEGORIES )%>
-  <input type ="submit" value="Filter">
-</form>
 
-
-
-<table>
+<div class=index1>
+<table class=postTable>
   <tr>
     <th>Title</th>
-    <th>Created</th>
     <th>Author</th>
     <th>Category</th>
+    <th>Created</th>
+    <th></th>
   </tr>
  
   <% @posts.each do |post| %>
-    <tr>
-      <td><%= post.title %></td>
-      <td><%= post.created_at %></td>
-      <td><%= post.author %></td>
-      <td><%=
-          if post.category.to_s.empty?
-            "None"
-          else
-            post.category
-          end
-          %></td>
-      <td><%= link_to 'Show', post_path(post) %></td>
-      <td><%= link_to 'Edit', edit_post_path(post) %></td>
-      <% if current_user %>
-        <% if current_user.uid.eql?post.author_id%>
-          <td><%= link_to 'Destroy',
-                                post_path(post),
-                                method: :delete,
-                                data: { confirm: 'Are you sure?' } %></td>
-        <% end %>
-      <% end %>
-    </tr>
+    
+        <tr>
+          <td><%= link_to post.title, post_path(post) %></td>
+          
+          <td><%= post.author %></td>
+          <td><%=
+              if post.category.to_s.empty?
+                "None"
+              else
+                post.category
+              end
+              %></td>
+              <td><%= post.created_at %></td>
+          <!--<td><%= link_to 'Show', post_path(post) %></td>-->
+          <!--<td><%= link_to 'Edit', edit_post_path(post) %></td>-->
+          <% if current_user %>
+            <% if current_user.uid.eql?post.author_id%>
+              <td><%= link_to 'Delete',
+                                    post_path(post),
+                                    method: :delete,
+                                    data: { confirm: 'Are you sure?' } %></td>
+            <% else%>
+              <td></td>
+            <% end %>
+            
+          <% else%>
+              <td></td>
+          <% end %>
+          
+        </tr>
   <% end %>
 </table>
-<%= link_to 'New post' , new_post_path %>
+</div>

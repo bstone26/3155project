@@ -1,6 +1,22 @@
-<img src ="https://advancement.uncc.edu/sites/advancement.uncc.edu/files/media/crown.gif" alt="unccCrownLogo">
-<h1>Welcome to Ask A Niner</h1>
-<%= link_to 'Posts', controller: 'posts' %>
-<!--<div>
-    <%= render 'posts/index' %>
-</div>-->
+<h1>Home</h1>
+
+<% if current_user %>
+    <%= link_to 'All Posts', controller: 'posts' %>
+    <h2>Your Posts</h2>
+    <% if @posts.empty? %>
+        <p>Oh, it looks like you have yet to make a 
+        post feel free to make one <%= link_to 'Here' , new_post_path %></p>
+    <% else %>
+        <%= render 'posts/index' %>
+    <% end %>
+
+<% else %>
+    <div id="stopMessage">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/8/81/Stop_sign.png" id="stopSign"alt="Stop_sign">
+        <h4>Woah there champ, we noticed you aren't signed in. We highly
+        recommend you sign on in, so you can get the most out of our site's features.
+        But, if you don't want to <%= link_to "Sign in", "/auth/google_oauth2", id: "sign_in" %> feel free to view the 
+        posts <%= link_to 'here.', controller: 'posts' %></h4>
+    </div>
+    
+<%end%>

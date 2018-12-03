@@ -1,9 +1,20 @@
-<p>
-    <strong>Author:</strong>
+<div id="reply">
+  
+  <div id="replyCred">
     <%= reply.commenter %>
-  </p>
+    at <%=reply.created_at%>
+  </div>
  
-  <p>
-    <strong>Reply:</strong>
+  <div id="replyContent">
     <%= reply.body %>
-  </p>
+  </div>
+  <% if current_user%>
+    <% if current_user.uid.eql?reply.commenter_id %>
+      <div id="replyDelete">
+        <%= link_to 'Delete Reply', [reply.post, reply],
+                    method: :delete,
+                    data: {confirm: 'Are you sure' } %>
+      </div>
+    <% end %>
+  <% end %>
+</div>
