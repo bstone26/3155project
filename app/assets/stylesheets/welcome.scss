@@ -9,3 +9,13 @@ th{
 .index1 tr:hover {background-color:#cff9dd;}
 // tr:hover:nth-child(even) {background-color: #cff9dd;}
 tr:nth-child(even) {background-color: #f2f2f2;}
+#stopMessage{
+    width:70%;
+    margin: auto;
+    background-color:#e2dcd9;
+    border:solid red 1px;
+    padding:10px;
+}
+#stopSign{
+    width:30%;
+}
