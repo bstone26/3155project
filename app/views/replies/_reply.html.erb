@@ -9,10 +9,12 @@
     <%= reply.body %>
   </div>
   <% if current_user%>
-  <div>
-    <%= link_to 'Delete Reply', [reply.post, reply],
-                method: :delete,
-                data: {confirm: 'Are you sure' } %>
-  </div>
+    <% if current_user.uid.eql?reply.commenter_id %>
+      <div id="replyDelete">
+        <%= link_to 'Delete Reply', [reply.post, reply],
+                    method: :delete,
+                    data: {confirm: 'Are you sure' } %>
+      </div>
+    <% end %>
   <% end %>
 </div>
