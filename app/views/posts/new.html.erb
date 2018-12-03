@@ -1,3 +1,4 @@
+<br>
 <% if @post.errors.any? %>
     <div id="error_explanation">
       <h2>
@@ -12,7 +13,7 @@
     </div>
   <% end %>
 <div id="createPostForm">
-  <p id="title">New Post</p>
+  <h3>New Post</h3>
   <%= form_for :post, url: posts_path do |f| %>
  
     <div id="createPostCred">

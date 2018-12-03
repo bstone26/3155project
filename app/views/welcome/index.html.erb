@@ -1,5 +1,14 @@
 <h1>Home</h1>
 <%= link_to 'All Posts', controller: 'posts' %>
-<div class=index2>
-    <%= render 'posts/index' %>
-</div>
+<% if current_user %>
+    <h2>Your Posts</h2>
+    <% if @posts.empty? %>
+        <p>Oh, it looks like you have yet to make a 
+        post feel free to make one <%= link_to 'Here' , new_post_path %></p>
+    <% else %>
+        <%= render 'posts/index' %>
+    <% end %>
+
+<% else %>
+
+<%end%>
