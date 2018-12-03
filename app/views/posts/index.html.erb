@@ -14,7 +14,11 @@
           <input type ="submit" value="Filter">
         </form>
       </td>
-      <td><div><%= link_to 'New post' , new_post_path %></div></td>
+      <% if current_user %>
+        <td><div><%= link_to 'New post' , new_post_path %></div></td>
+      <% else %>
+        <td>Sign in to post</td>
+      <% end %>
     </tr>
   </table>
 </div>

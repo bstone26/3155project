@@ -2,7 +2,7 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 #createReplyBox{
-    width:80%;
+    width:60%;
     margin: auto;
 }
 #createReplyBox textarea{
@@ -15,18 +15,20 @@
 }
 #createReplyButton{
     //border: solid black 1px;
-    width: 80%;
+    width: 60%;
     margin:auto;
     text-align:right;
+    padding:5px;
+    padding-bottom:10px;
 }
 #reply{
     border:solid black 1px;
-    width:80%;
+    width:60%;
     margin: auto;
 
 }
 #replyHeader{
-    width:80%;
+    width:60%;
     margin: auto;
     text-align:left;
     border:solid black 1px;

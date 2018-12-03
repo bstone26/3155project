@@ -11,14 +11,18 @@ class PostsController < ApplicationController
         @post = Post.find(params[:id])
     end
     def new
+        @post = Post.new
     end
 
     def create
         @post = Post.new(post_params)
         @post.author = current_user.name
         @post.author_id = current_user.uid
-        @post.save
-        redirect_to @post
+        if @post.save
+            redirect_to @post
+        else
+            render'new'
+        end
     end
     def edit
         @post = Post.find(params[:id])
