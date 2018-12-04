@@ -15,7 +15,8 @@ class PostsController < ApplicationController
 
     def create
         @post = Post.new(post_params)
-        
+        @post.like = 0
+        @post.dislike = 0
         @post.save
         redirect_to @post
     end
@@ -24,12 +25,13 @@ class PostsController < ApplicationController
     end
     def update
         @post = Post.find(params[:id])
-        
-        if @post.update(post_params)
-            redirect_to @post
+        if(params["commit"]["Like"])
+            @post.like += 1
         else
-            render 'edit'
+            @post.dislike += 1
         end
+        @post.save
+        redirect_to @post
     end
     def destroy
         @post = Post.find(params[:id])
