@@ -14,16 +14,3 @@ Scenario: As a user I want to be able to navigate from the homepage to the new p
   And I should see the "Category" field
   And I should see the "Text" field
   
-Scenario: As a user I want to be able to delete my post
-  Given I am on the homepage
-  When I click on the "Posts" link
-  Then I should be on the "Posts" page
-  When I click on the "New post" link
-  Then I should be on the "New Post" page
-  When I click on the "Save Post" button
-  Then I should be on the "Posts" page
-  When I click on the "Posts" link
-  Then I should be on the "Posts" page
-  And I should see the "Show" link
-  And I should see the "Edit" link
-  And I should see the "Destroy" link
