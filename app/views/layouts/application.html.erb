@@ -19,13 +19,14 @@
         Signed in as <strong><%= current_user.name %></strong>!
         <%= link_to "Sign out", signout_path, id: "sign_out" %>
         <br><%= link_to 'Change Major', edit_session_path(current_user)%>
+        <!--<p>Current Major: <%=current_user.major%></p>-->
       <% else %>
         <%= link_to "Sign in with Google", "/auth/google_oauth2", id: "sign_in" %>
       <% end %>
       <!--<%= params %>-->
       <!--<% if current_user %>-->
       <!--<%end%>-->
-      <!--<%= current_user.major %>-->
+      
       
 
     </div>

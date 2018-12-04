@@ -2,13 +2,26 @@
 
 <% if current_user %>
     <%= link_to 'All Posts', controller: 'posts' %>
-    <h2>Your Posts</h2>
     <% if @posts.empty? %>
         <p>Oh, it looks like you have yet to make a 
         post feel free to make one <%= link_to 'Here' , new_post_path %></p>
     <% else %>
+        <h2>Your Posts</h2>
         <%= render 'posts/index' %>
     <% end %>
+    
+    <% if current_user.major.to_s.empty? %>
+        <p>Oh, it looks like you have yet to choose a major.
+        Please Choose one <%= link_to 'Choose Major', edit_session_path(current_user)%></p>
+    <% elsif @posts2.empty? %>
+        <p>Oh, it looks like nobody has made a post in your major be the first 
+        <%= link_to 'Here' , new_post_path %></p>
+    <% else %>
+        <h2>Posts in your Major</h2>
+        <%= render 'posts/index2' %>
+    
+    <%end%>
+    
 
 <% else %>
     <div id="stopMessage">
@@ -20,3 +33,7 @@
     </div>
     
 <%end%>
+
+
+
+
