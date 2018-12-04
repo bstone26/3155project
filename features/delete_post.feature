@@ -15,5 +15,4 @@ Scenario: As a user I want to be able to delete my post
   When I click on the "Posts" link
   Then I should be on the "Posts" page
   And I should see the "Show" link
-  And I should see the "Edit" link
   And I should see the "Destroy" link
