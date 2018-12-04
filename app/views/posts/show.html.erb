@@ -19,10 +19,12 @@
             <%= @post.text %>
         </p>
     </div>
-    <div>
-        <%= @post.like%> Likes <%=@post.dislike%> Dislikes
-        <%= render 'posts/edit' %>
-    </div>
+    <% if current_user %>
+        <div>
+            <%= @post.like%> Likes <%=@post.dislike%> Dislikes
+            <%= render 'posts/edit' %>
+        </div>
+    <% end %>
 </div>
 
 <% if current_user %>

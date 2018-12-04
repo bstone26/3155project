@@ -1,4 +1,5 @@
-<%= form_for :post, url: post_path(@post), method: :patch do |f| %>
-    <%=f.submit "Like"%>
-    <%=f.submit "Dislike"%>
-<% end %>
+
+    <%= form_for :post, url: post_path(@post), method: :patch do |f| %>
+        <%=f.submit "Like"%>
+        <%=f.submit "Dislike"%>
+    <% end %>
