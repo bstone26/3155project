@@ -18,6 +18,8 @@ class PostsController < ApplicationController
         @post = Post.new(post_params)
         @post.author = current_user.name
         @post.author_id = current_user.uid
+        @post.like = 0
+        @post.dislike = 0
         if @post.save
             redirect_to @post
         else
@@ -29,12 +31,13 @@ class PostsController < ApplicationController
     end
     def update
         @post = Post.find(params[:id])
-        
-        if @post.update(post_params)
-            redirect_to @post
+        if(params["commit"]["Like"])
+            @post.like += 1
         else
-            render 'edit'
+            @post.dislike += 1
         end
+        @post.save
+        redirect_to @post
     end
     def destroy
         @post = Post.find(params[:id])

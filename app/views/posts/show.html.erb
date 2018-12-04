@@ -18,10 +18,15 @@
             <%= @post.text %>
         </p>
     </div>
+    <div>
+        <%= @post.like%> Likes <%=@post.dislike%> Dislikes
+        <%= render 'posts/edit' %>
+    </div>
 </div>
 
 <% if current_user %>
     <%= render 'replies/form' %>
+    
 <%else%>
     <p>You must be signed in to reply</p>
 <% end %>
