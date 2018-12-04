@@ -1,1 +1,13 @@
 <h1>Edit user</h1>
+
+<%= form_for :user, url: session_path(@user), method: :patch do |f| %>
+<p>
+    <%=f.label :major%>
+    <%= f.collection_select :major, Post::CATEGORIES, :to_s, :to_s,
+          :include_blank => true%>
+</p>
+<p>
+    <%=f.submit%>
+</p>
+<% end %>
+
