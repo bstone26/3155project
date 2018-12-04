@@ -9,5 +9,6 @@ class User < ApplicationRecord
             user.save!
         end
     end
+    MAJORS = ['Architecture','Art','Biology','Chemistry','Computer Science','Math']
 end
 
