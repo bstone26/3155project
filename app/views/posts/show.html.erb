@@ -1,3 +1,4 @@
+<br>
 <div id="post">    
     <div id="postTitle">
         <h3>
@@ -31,11 +32,13 @@
     <p>You must be signed in to reply</p>
 <% end %>
 
-<div id="replyHeader">
-    <h3>Replies</h3>
-</div>
 
-<%= render @post.replies %>
+    
+        <div id="replyHeader">
+            <h3>Replies</h3>
+        </div>
+    <%= render @post.replies %>
+
 
 
 <%= link_to 'Posts', posts_path %>

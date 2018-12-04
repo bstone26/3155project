@@ -32,6 +32,7 @@
     <th>Category</th>
     <th>Created</th>
     <th></th>
+    <th></th>
   </tr>
  
   <% @posts.each do |post| %>
@@ -63,6 +64,7 @@
           <% else%>
               <td></td>
           <% end %>
+          <td><%= post.like%> Likes <%=post.dislike%> Dislikes</td>
           
         </tr>
   <% end %>
